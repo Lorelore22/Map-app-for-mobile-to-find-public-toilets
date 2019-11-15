@@ -1,2 +1,16 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div id='map' style='width: 200px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibG9yZWxvcmUyMiIsImEiOiJjazJ6eWFlOWIwZGdvM2xxajE1cWtwNW40In0.XRygCDceol4DCypWeqb0cg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [13.407906, 52.504156],
+    zoom: 10
+  });
+
+  map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+  }));
+
+</script>
