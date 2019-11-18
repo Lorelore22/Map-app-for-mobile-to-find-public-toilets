@@ -7,7 +7,9 @@ const toiletSchema = new Schema({
     required: true
   },
   isFree: {
-    type: Boolean,
+    type: {
+      enum: ["Yes", "No"]
+    },
     required: true
   },
   price: {
@@ -20,22 +22,39 @@ const toiletSchema = new Schema({
   experience: {
     enum: [0, 1, 2, 3, 4, 5]
   },
-  soap: Boolean,
+  soap: {
+    type: {
+      enum: ["Yes", "No"]
+    }
+    },
   handDrying: {
     enum: ["hand dryer", "paper towels", "cloth towels", "other", "none"]
   },
   features: {
-    enum: ["changing table", "feminine products", "trash can"]
+    enum: ["changing table—men", "changing table—women", "feminine products", "trash can"]
   },
-  accesibility: {
+  accessibility: {
     enum: ['gender-sensitive/nonbinary', 'barrier-free']
   },
   image: {
     type: String,
     default: '/images/dragon.png'
-  }
-})
-
+  },
+  coordinates: {
+    type: Schema.Types.ObjectId,
+    ref: "Point"
+  },
+  adder: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
+  // comments: [
+  //   {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Comment"
+  //   }]
+  })
+  
 
 
 const Toilet = mongoose.model('Toilet', toiletSchema);

@@ -1,0 +1,82 @@
+<h1>Add a toilet</h1>
+<form action="/toiletform" method="post">
+  <label name="type" id="type">Location type
+    <select>
+      <option value="">Public</option>
+      <option value="">Restaurants and cafes</option>
+      <option value="">Train station</option>
+      <option value="">Bus station</option>
+      <option value="">Museum</option>
+      <option value="">Gas station</option>
+      <option value="">Bar and clubs</option>
+      <option value="">Other</option>
+    </select>
+  </label>
+
+  <p>Free?</p>
+  <input type="radio" name="isFree" id="isFree" value="yes">
+  <label for="isFree">Yes</label>
+  <input type="radio" name="isFree" id="isFree" value="no">
+  <label for="isFree">No</label>
+  {{!-- IF MACHEN --}}
+  <label for="price">Price</label>
+  <input type="number" name="price" id="price">
+
+
+  <label name="cleanliness" id="cleanliness">Cleanliness (5 is the best!)
+    <select>
+      <option value="">0</option>
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+      <option value="">5</option>
+    </select>
+  </label>
+
+  <label name="experience" id="experience">Experience (5 is the best!)
+    <select>
+      <option value="">0</option>
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+      <option value="">5</option>
+    </select>
+  </label>
+
+
+  <p>Soap?</p>
+  <input type="radio" name="soap" id="soap" value="yes">
+  <label for="soap">Yes</label>
+  <input type="radio" name="soap" id="soap" value="no">
+  <label for="soap">No</label>
+
+  <p>Hand-drying options upon use</p>
+  <input type="checkbox" name="handDrying" value="dryer">hand dryer
+  <input type="checkbox" name="handDrying" value="paper">paper towels
+  <input type="checkbox" name="handDrying" value="cloth">cloth towels
+  <input type="checkbox" name="handDrying" value="other">other
+  <input type="checkbox" name="handDrying" value="none">none
+
+
+  <p>Features</p>
+  <input type="checkbox" name="features" value="changing—men">changing table—men
+  <input type="checkbox" name="features" value="changing—women">changing table—women
+  <input type="checkbox" name="features" value="feminineproducts">feminine products
+  <input type="checkbox" name="features" value="trash">trash can
+
+
+  <p>Accessibility</p>
+  <input type="checkbox" name="accessibility" value="gender-sensitive/nonbinary">gender-sensitive/nonbinary
+  <input type="checkbox" name="accessibility" value="barrier-free">barrier-free
+
+  <label>Upload a picture
+    <input name="image" type="file" size="40" accept="image/jpeg">
+  </label>
+
+  {{!-- Nicht vergessen: comments --}}
+
+
+  <button type="submit">Add</button>
+</form>

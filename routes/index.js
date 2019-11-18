@@ -18,7 +18,7 @@ router.get('/api/points', (req, res, next) => {
 })
 
 router.post('/api/points', (req, res, next) => {
-  console.log(req.body);
+  console.log("irgendein Schmarn", req.body);
   Point.create({
     coordinates: req.body.coordinates
   }).then(() => {
@@ -28,6 +28,32 @@ router.post('/api/points', (req, res, next) => {
     next(err)
   })
 })
+
+
+router.get('/toiletform', (req, res) => {
+  res.render('toiletForm')
+})
+
+
+router.post('/toiletform', (req, res, next) => {
+  console.log(req.body)
+  Toilet.create({
+    type: req.body.type, 
+    isFree: req.body.isFree, 
+    price: req.body.price, 
+    cleanliness: req.body.cleanliness, 
+    experience: req.body.experience, 
+    soap: req.body.soap, 
+    handDrying: req.body.handDrying, 
+    features: req.body.features, 
+    accessibility: req.body.accessibility, 
+    image: req.body.image,
+     
+  })
+  // .then
+})
+
+
 
 
 
