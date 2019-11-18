@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const toiletSchema = new Schema({
-  type: {
+  toiletType: {
     enum: ["Public", "Restaurants and cafes", "Train station", "Bus station", "Museum", "Gas station", "Bar and clubs", "Other"],
-    required: true
+    // required: true
   },
   isFree: {
     type: {
@@ -26,7 +26,7 @@ const toiletSchema = new Schema({
     type: {
       enum: ["Yes", "No"]
     }
-    },
+  },
   handDrying: {
     enum: ["hand dryer", "paper towels", "cloth towels", "other", "none"]
   },
@@ -53,8 +53,8 @@ const toiletSchema = new Schema({
   //   type: Schema.Types.ObjectId,
   //   ref: "Comment"
   //   }]
-  })
-  
+})
+
 
 
 const Toilet = mongoose.model('Toilet', toiletSchema);
