@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Point = require('../models/Point');
+const Point = require("../models/Point");
 const User = require("../models/User");
-const Toilet = require("../models/Toilet")
+const Toilet = require("../models/Toilet");
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
+router.get("/", (req, res, next) => {
+  res.render("index");
 });
 
 const loginCheck = () => {
@@ -19,36 +19,35 @@ const loginCheck = () => {
   };
 };
 
-
-router.get('/api/points', (req, res, next) => {
+router.get("/api/points", (req, res, next) => {
   Point.find()
     .then(points => {
-      res.json(points)
-    }).catch(err => {
-      next(err)
+      res.json(points);
     })
-})
+    .catch(err => {
+      next(err);
+    });
+});
 
-router.post('/api/points', loginCheck(), (req, res, next) => {
+router.post("/api/points", loginCheck(), (req, res, next) => {
   console.log("irgendein Schmarn", req.body);
   Point.create({
-      coordinates: req.body.coordinates
-    }).then(() => {
+    coordinates: req.body.coordinates
+  })
+    .then(() => {
       res.json();
     })
     .catch(err => {
-      next(err)
-    })
-})
+      next(err);
+    });
+});
 
+router.get("/toiletform", loginCheck(), (req, res) => {
+  res.render("toiletForm");
+});
 
-router.get('/toiletform', loginCheck(), (req, res) => {
-  res.render('toiletForm')
-})
-
-
-router.post('/toiletform', loginCheck(), (req, res, next) => {
-  console.log(req.body)
+router.post("/toiletform", loginCheck(), (req, res, next) => {
+  console.log(req.body);
   Toilet.create({
     type: req.body.type,
     isFree: req.body.isFree,
@@ -59,14 +58,26 @@ router.post('/toiletform', loginCheck(), (req, res, next) => {
     handDrying: req.body.handDrying,
     features: req.body.features,
     accessibility: req.body.accessibility,
-    image: req.body.image,
-
+    image: req.body.image
   })
-  // .then
-})
+    .then(toilet => {
+      res.redirect(`/toilet/${toilet._id}`);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
-
-
-
+router.get("/toilet/:toiletId", loginCheck(), (req, res, next) => {
+  Toilet.findById(req.params.toiletId)
+    // .populate("adder")
+    .then(toilet => {
+      console.log("toilet from db", toilet);
+      res.render("toiletDetails", { toilet });
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
 module.exports = router;

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const toiletSchema = new Schema({
   toiletType: {
-    enum: ["Public", "Restaurants and cafes", "Train station", "Bus station", "Museum", "Gas station", "Bar and clubs", "Other"],
+    enum: ["Public", "Restaurant/cafe", "Train station", "Bus station", "Museum", "Gas station", "Bar/club", "Other"],
     // required: true
   },
   isFree: {
