@@ -1,9 +1,5 @@
 <div id='map' style='width: 200px; height: 300px;'></div>
 
-<input type="text" name="lng" id="lng">
-<input type="text" name="lat" id="lat">
-
-<a href="/toiletform">Add a toilet</a>
 
 
 
@@ -63,3 +59,14 @@
 
   getMarkers();
 </script>
+
+
+<form action="/addToilet" method="post">
+  <input type="text" name="lng" id="lng">
+  <input type="text" name="lat" id="lat">
+
+  <button type="submit">
+    Add a toilet
+  </button>
+
+</form>

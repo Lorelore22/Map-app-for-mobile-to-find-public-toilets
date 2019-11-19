@@ -1,5 +1,6 @@
 <h1>Add a toilet</h1>
-<form action="/toiletform" method="post">
+
+<form action="/updateToilet/{{toilet._id}}" method="post">
   <label name="toiletType" id="toiletType">Location type</label>
   <select name="toiletType" required="true">
     <option value="Public">Public</option>
@@ -11,9 +12,10 @@
     <option value="Bar/club">Bar and clubs</option>
     <option value="Other">Other</option>
   </select>
+  
 
   <p>Free?</p>
-  <input type="radio" name="isFree" id="isFree" value="Yes">
+  <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
   <label for="isFree">Yes</label>
   <input type="radio" name="isFree" id="isFree" value="No">
   <label for="isFree">No</label>
@@ -78,6 +80,10 @@
 
 
   <button type="submit">Add</button>
+
+
 </form>
+
+
 
 <a href="/">Back to map</a>

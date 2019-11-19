@@ -5,12 +5,10 @@ const toiletSchema = new Schema({
   toiletType: {
     type: String,
     enum: ["Public", "Restaurant/cafe", "Train station", "Bus station", "Museum", "Gas station", "Bar/club", "Other"],
-    required: true
   },
   isFree: {
     type: String,
     enum: ["Yes", "No"],
-    required: true
   },
   price: {
     type: Number,
@@ -44,8 +42,7 @@ const toiletSchema = new Schema({
     default: '/images/dragon.png'
   },
   coordinates: {
-    type: Schema.Types.ObjectId,
-    ref: "Point"
+    type: Array
   },
   adder: {
     type: Schema.Types.ObjectId,
