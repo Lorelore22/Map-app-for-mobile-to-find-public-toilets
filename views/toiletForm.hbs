@@ -1,79 +1,78 @@
 <h1>Add a toilet</h1>
 <form action="/toiletform" method="post">
-  <label name="toiletType" id="toiletType">Location type
-    <select>
-      <option value="">Public</option>
-      <option value="">Restaurants and cafes</option>
-      <option value="">Train station</option>
-      <option value="">Bus station</option>
-      <option value="">Museum</option>
-      <option value="">Gas station</option>
-      <option value="">Bar and clubs</option>
-      <option value="">Other</option>
-    </select>
-  </label>
+  <label name="toiletType" id="toiletType">Location type</label>
+  <select name="toiletType" required="true">
+    <option value="Public">Public</option>
+    <option value="Restaurant/cafe">Restaurants and cafes</option>
+    <option value="Train station">Train station</option>
+    <option value="Bus station">Bus station</option>
+    <option value="Museum">Museum</option>
+    <option value="Gas station">Gas station</option>
+    <option value="Bar/club">Bar and clubs</option>
+    <option value="Other">Other</option>
+  </select>
 
   <p>Free?</p>
-  <input type="radio" name="isFree" id="isFree" value="yes">
+  <input type="radio" name="isFree" id="isFree" value="Yes">
   <label for="isFree">Yes</label>
-  <input type="radio" name="isFree" id="isFree" value="no">
+  <input type="radio" name="isFree" id="isFree" value="No">
   <label for="isFree">No</label>
   {{!-- IF MACHEN --}}
   <label for="price">Price</label>
   <input type="number" name="price" id="price">
 
 
-  <label name="cleanliness" id="cleanliness">Cleanliness (5 is the best!)
-    <select>
-      <option value="">0</option>
-      <option value="">1</option>
-      <option value="">2</option>
-      <option value="">3</option>
-      <option value="">4</option>
-      <option value="">5</option>
-    </select>
-  </label>
+  <label name="cleanliness" id="cleanliness">Cleanliness (5 is the best!)</label>
+  <select>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
 
-  <label name="experience" id="experience">Experience (5 is the best!)
-    <select>
-      <option value="">0</option>
-      <option value="">1</option>
-      <option value="">2</option>
-      <option value="">3</option>
-      <option value="">4</option>
-      <option value="">5</option>
-    </select>
-  </label>
+
+  <label name="experience" id="experience">Experience (5 is the best!)</label>
+  <select>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+
 
 
   <p>Soap?</p>
-  <input type="radio" name="soap" id="soap" value="yes">
+  <input type="radio" name="soap" id="soap" value="Yes">
   <label for="soap">Yes</label>
-  <input type="radio" name="soap" id="soap" value="no">
+  <input type="radio" name="soap" id="soap" value="No">
   <label for="soap">No</label>
 
   <p>Hand-drying options upon use</p>
-  <input type="checkbox" name="handDrying" value="dryer">hand dryer
-  <input type="checkbox" name="handDrying" value="paper">paper towels
-  <input type="checkbox" name="handDrying" value="cloth">cloth towels
-  <input type="checkbox" name="handDrying" value="other">other
-  <input type="checkbox" name="handDrying" value="none">none
+  <input type="checkbox" name="handDrying" value="hand dryer">hand dryer</input>
+  <input type="checkbox" name="handDrying" value="paper towels">paper towels</input>
+  <input type="checkbox" name="handDrying" value="cloth towels">cloth towels</input>
+  <input type="checkbox" name="handDrying" value="other">other</input>
+  <input type="checkbox" name="handDrying" value="none">none</input>
 
 
   <p>Features</p>
-  <input type="checkbox" name="features" value="changing—men">changing table—men
-  <input type="checkbox" name="features" value="changing—women">changing table—women
-  <input type="checkbox" name="features" value="feminineproducts">feminine products
-  <input type="checkbox" name="features" value="trash">trash can
+  <input type="checkbox" name="features" value="changing table—men">changing table—men</input>
+  <input type="checkbox" name="features" value="changing table—women">changing table—women</input>
+  <input type="checkbox" name="features" value="feminine products">feminine products</input>
+  <input type="checkbox" name="features" value="trash can">trash can</input>
 
 
   <p>Accessibility</p>
-  <input type="checkbox" name="accessibility" value="gender-sensitive/nonbinary">gender-sensitive/nonbinary
-  <input type="checkbox" name="accessibility" value="barrier-free">barrier-free
+  <input type="checkbox" name="accessibility" value="gender-sensitive/nonbinary">gender-sensitive/nonbinary</input>
+  <input type="checkbox" name="accessibility" value="barrier-free">barrier-free</input>
 
-  <label>Upload a picture
-    <input name="image" type="file" size="40" accept="image/jpeg">
-  </label>
+  <label>Upload a picture</label>
+  <input name="image" type="file" size="40" accept="image/jpeg">
+
 
   {{!-- Nicht vergessen: comments --}}
 

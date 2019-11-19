@@ -1,3 +1,29 @@
 {{#with toilet}}
-<h1>{{type}} toilet</h1>
+<h1>{{toiletType}} toilet: </h1>
+
+
+{{#if price}}
+<h2>{{price}} €</h2>
+{{else}}
+<h2>free</h2>
+{{/if}}
+
+<p>Cleanliness: {{cleanliness}}</p>
+
+<p>Experiences: {{experience}}</p>
+
+<p>Soap: {{soap}}</p>
+
+<p>Hand-drying options: </p>
+<ul>
+  {{#each handDrying}}
+  <li>
+    {{handDrying}}
+  </li>
+  {{/each}}
+</ul>
+
+
+
+{{isFree}} {{price}} {{cleanliness}} {{experience}} toilet
 {{/with}}

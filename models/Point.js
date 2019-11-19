@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const pointSchema = new Schema({
     coordinates: [Number]
+    
 })
 
 

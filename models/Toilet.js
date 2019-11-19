@@ -3,37 +3,40 @@ const Schema = mongoose.Schema;
 
 const toiletSchema = new Schema({
   toiletType: {
+    type: String,
     enum: ["Public", "Restaurant/cafe", "Train station", "Bus station", "Museum", "Gas station", "Bar/club", "Other"],
-    // required: true
+    required: true
   },
   isFree: {
-    type: {
-      enum: ["Yes", "No"]
-    },
+    type: String,
+    enum: ["Yes", "No"],
     required: true
   },
   price: {
     type: Number,
-    default: 0.00
   },
   cleanliness: {
+    type: Number,
     enum: [0, 1, 2, 3, 4, 5]
   },
   experience: {
+    type: Number,
     enum: [0, 1, 2, 3, 4, 5]
   },
   soap: {
-    type: {
-      enum: ["Yes", "No"]
-    }
+    type: String,
+    enum: ["Yes", "No"]
   },
   handDrying: {
+    type: String,
     enum: ["hand dryer", "paper towels", "cloth towels", "other", "none"]
   },
   features: {
+    type: String,
     enum: ["changing table—men", "changing table—women", "feminine products", "trash can"]
   },
   accessibility: {
+    type: String,
     enum: ['gender-sensitive/nonbinary', 'barrier-free']
   },
   image: {

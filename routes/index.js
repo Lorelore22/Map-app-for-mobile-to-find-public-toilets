@@ -49,7 +49,7 @@ router.get("/toiletform", loginCheck(), (req, res) => {
 router.post("/toiletform", loginCheck(), (req, res, next) => {
   console.log(req.body);
   Toilet.create({
-    type: req.body.type,
+    toiletType: req.body.toiletType,
     isFree: req.body.isFree,
     price: req.body.price,
     cleanliness: req.body.cleanliness,
@@ -59,6 +59,7 @@ router.post("/toiletform", loginCheck(), (req, res, next) => {
     features: req.body.features,
     accessibility: req.body.accessibility,
     image: req.body.image
+    
   })
     .then(toilet => {
       res.redirect(`/toilet/${toilet._id}`);
