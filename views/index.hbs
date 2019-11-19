@@ -1,4 +1,13 @@
 <div id='map' style='width: 200px; height: 300px;'></div>
+
+<input type="text" name="lng" id="lng">
+<input type="text" name="lat" id="lat">
+
+<a href="/toiletform">Add a toilet</a>
+
+
+
+
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoibG9yZWxvcmUyMiIsImEiOiJjazJ6eWFlOWIwZGdvM2xxajE1cWtwNW40In0.XRygCDceol4DCypWeqb0cg';
   var map = new mapboxgl.Map({
@@ -15,39 +24,42 @@
 
 
   let marker = new mapboxgl.Marker({
-        draggable: true,
-        color: "green" 
-        // set coordinates for marker, place on map:
-    }).setLngLat([13.40, 52.52]).addTo(map);
+    draggable: true,
+    color: "green"
+    // set coordinates for marker, place on map:
+  }).setLngLat([13.40, 52.52]).addTo(map);
 
-    marker.on("dragend", () => {
-      const lngLat = marker.getLngLat();
-      console.log(lngLat)
-      map.flyTo({center: lngLat})
+  marker.on("dragend", () => {
+    let lngLat = marker.getLngLat();
+    console.log(lngLat);
 
-    
-      axios.post('/api/points', {
-       coordinates: [lngLat.lng, lngLat.lat]
-      }).then(response => {
-        {{!-- console.log(response) --}}
-      }).catch(err => {
-        {{!-- console.log(err) --}}
+    document.getElementById("lat").value = lngLat.lat;
+    document.getElementById("lng").value = lngLat.lng;
+
+    console.log(lngLat)
+
+
+  })
+  /*
+    axios.post('/api/points', {
+      coordinates: [lngLat.lng, lngLat.lat]
+    }).then(response => {
+      { { !--console.log(response) --} }
+    }).catch(err => {
+      { { !--console.log(err) --} }
+    })
+    */
+
+
+  const getMarkers = () => {
+    axios.get('/api/points').then(response => {
+      response.data.forEach(point => {
+        new mapboxgl.Marker().setLngLat(point.coordinates).addTo(map)
       })
-      })
+    }).catch(err => {
+      console.log(err)
+    })
+  }
 
-    const getMarkers = () => {
-      axios.get('/api/points').then(response => {
-        response.data.forEach(point => {
-          new mapboxgl.Marker().setLngLat(point.coordinates).addTo(map)
-        })
-      }).catch(err => {
-        console.log(err)
-      })
-    }
-
-getMarkers();
-
-
-
-
+  getMarkers();
 </script>
