@@ -68,11 +68,11 @@ router.get("/toiletform/:toiletId", loginCheck(), (req, res) => {
 });
 
 router.post("/addToilet", loginCheck(), (req, res, next) => {
-  console.log("entering post", req.body);
+  console.log("entering post: userDaten???", req.body);
   const coordArr = [parseFloat(req.body.lng), parseFloat(req.body.lat)]
   Toilet.create({
       coordinates: coordArr
-      // user
+      // adder: req.user._id ???????????
     })
     .then(toilet => {
       // res.send(toilet)
@@ -124,10 +124,13 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
       barrierFree,
 
       image
+
     } = req.body
 
+
     Toilet.findByIdAndUpdate({
-          _id: id
+          _id: id,
+
         },
         //// Destructuring  !!!!!!!!!!!!!!!!!!!!!!!!!! :)
         {
@@ -152,7 +155,8 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
           genderSensitivity,
           barrierFree,
 
-          image
+          image,
+          adder: req.user._id
         }, {
           new: true
         })
