@@ -1,27 +1,65 @@
 {{#with toilet}}
 <h1>{{toiletType}} toilet: </h1>
-{{!-- warum geht toiletType jetzt nicht mehr --}}
 
-
+<div>
 {{#if price}}
 <h2>Price: {{price}}€</h2>
 {{else}}
 <h2>Price: free</h2>
 {{/if}}
-
-{{#if cleanliness}}
-<p>Cleanliness: {{cleanliness}}</p>
-
-<p>Experiences: {{experience}}</p>
-
-<p>Soap: {{soap}}</p>
-
-{{/if}}
-
-<div>
-
 </div>
 
+<div>
+{{#if cleanliness}}
+<p>Cleanliness: {{cleanliness}}</p>
+{{/if}}
+</div>
+
+
+<div>
+{{#if experience}}
+<p>Experiences: {{experience}}</p>
+{{/if}}
+</div>
+
+
+<div>
+{{#if soap}}
+<p>{{soap}}</p>
+{{/if}}
+</div>
+
+
+
+
+
+<div></div>
+<div>
+{{#if handDryer}}
+<p>{{handDryer}}</p>
+{{/if}}
+</div>
+<div>
+{{#if paperTowels}}
+</p>{{paperTowels}}</p>
+{{/if}}
+</div>
+<div>
+  {{#if clothTowels}}
+<p> {{clothTowels}}</p>
+{{/if}}
+</div>
+<div>
+  {{#if other}}
+<p> {{other}}</p>
+{{/if}}
+</div>
+<div>
+  {{#if none}}
+<p> {{none}}</p>
+{{/if}}
+</div>
+</div>
 
 
 {{/with}}
