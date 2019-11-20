@@ -34,12 +34,16 @@ router.get('/api/toiletcoordinates', (req, res, next) => {
 
 
 router.get('/aboutus', (req, res, next) => {
-  res.render('aboutUs.hbs')
+  res.render('aboutUs.hbs', {
+    loggedIn: req.user
+  })
 })
 
 
 router.get('/donate', (req, res, next) => {
-  res.render('donate.hbs')
+  res.render('donate.hbs', {
+    loggedIn: req.user
+  })
 })
 
 
@@ -71,7 +75,8 @@ router.get("/toiletform/:toiletId", loginCheck(), (req, res) => {
   Toilet.findById(req.params.toiletId)
     .then(toilet => {
       res.render("toiletForm", {
-        toilet
+        toilet: toilet,
+        loggedIn: req.user
       });
     })
 });
@@ -100,7 +105,8 @@ router.get("/toiletDetails/:toiletId", loginCheck(), (req, res, next) => {
     .then(toilet => {
       console.log("toilet from db", toilet);
       res.render("toiletDetails", {
-        toilet
+        toilet: toilet,
+        loggedIn: req.user
       });
     })
     .catch(err => {

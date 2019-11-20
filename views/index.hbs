@@ -1,4 +1,4 @@
-<div id='map' style='width: 200px; height: 300px;'></div>
+<div id='map'></div>
 
 
 
@@ -70,8 +70,16 @@
     axios.get('/api/toiletcoordinates').then(response => {
       console.log("getmarkers")
       response.data.forEach(toilet => {
+        console.log("Hier!! " + toilet)
+        let popup = new mapboxgl.Popup({ offset: 10 })
+          .setHTML(
+            `<h1>Toilet: ${toilet.toiletType}</h1>
+             <a href="/toiletDetails/${toilet._id}">View more</a>
+            `
+          )
+
         console.log("markers data", toilet.coordinates)
-        new mapboxgl.Marker().setLngLat(toilet.coordinates).addTo(map)
+        new mapboxgl.Marker().setLngLat(toilet.coordinates).setPopup(popup).addTo(map)
       })
     }).catch(err => {
       console.log(err)
