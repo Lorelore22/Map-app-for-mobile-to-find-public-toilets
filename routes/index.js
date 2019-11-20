@@ -100,76 +100,123 @@ router.get("/toiletDetails/:toiletId", loginCheck(), (req, res, next) => {
 });
 
 router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
-    const id = req.params.toiletId
-    const {
-      toiletType,
-      isFree,
-      price,
-      cleanliness,
-      experience,
-      soap,
+  const id = req.params.toiletId
+  const {
+    toiletType,
+    isFree,
+    price,
+    cleanliness,
+    experience,
+    soap,
 
-      handDryer,
-      paperTowels,
-      clothTowels,
-      other,
-      none,
+    handDryer,
+    paperTowels,
+    clothTowels,
+    other,
+    none,
 
-      changingTableMen,
-      changingTableWomen,
-      feminineProducts,
-      trashCan,
+    changingTableMen,
+    changingTableWomen,
+    feminineProducts,
+    trashCan,
 
-      genderSensitivity,
-      barrierFree,
+    genderSensitivity,
+    barrierFree,
 
-      image
+    image
 
-    } = req.body
+  } = req.body
 
 
-    Toilet.findByIdAndUpdate({
-          _id: id,
+  Toilet.findByIdAndUpdate({
+        _id: id,
 
-        },
-        //// Destructuring  !!!!!!!!!!!!!!!!!!!!!!!!!! :)
-        {
-          toiletType,
-          isFree,
-          price,
-          cleanliness,
-          experience,
-          soap,
+      },
+      //// Destructuring  !!!!!!!!!!!!!!!!!!!!!!!!!! :)
+      {
+        toiletType,
+        isFree,
+        price,
+        cleanliness,
+        experience,
+        soap,
 
-          handDryer,
-          paperTowels,
-          clothTowels,
-          other,
-          none,
+        handDryer,
+        paperTowels,
+        clothTowels,
+        other,
+        none,
 
-          changingTableMen,
-          changingTableWomen,
-          feminineProducts,
-          trashCan,
+        changingTableMen,
+        changingTableWomen,
+        feminineProducts,
+        trashCan,
 
-          genderSensitivity,
-          barrierFree,
+        genderSensitivity,
+        barrierFree,
 
-          image,
-          adder: req.user._id
-        }, {
-          new: true
-        })
-      .then((toilet) => {
-        //res.send(toilet)
-        res.redirect(`/toiletDetails/${toilet._id}`);
+        image,
+        adder: req.user._id
+      }, {
+        new: true
       })
-      .catch(err => {
-        next(err);
+    .then((toilet) => {
+      //res.send(toilet)
+      res.redirect(`/toiletDetails/${toilet._id}`);
+    })
+    .catch(err => {
+      next(err);
+    })
+})
+
+router.get("/toilets", (req, res, next) => {
+  Toilet.find({
+      adder: req.user
+    }) ///////////////////////////////////////////////////////////////
+    .then(toilets => {
+      res.render("myToilets.hbs", {
+        toilets: toilets
+      });
+    })
+    .catch(err => {
+      next(err);
+    })
+})
+
+
+router.get("/toilets/:toiletId", loginCheck(), (req, res, next) => {
+  console.log("Test funktioniert die Route für toilets/:toiletId??");
+  Toilet.findById(req.params.toiletId)
+    .populate("adder")
+    .then(toilet => {
+      res.render("toiletDetails.hbs", {
+        //layout: false,
+        toilet: toilet,
+        showDelete: toilet.adder._id.toString() === req.user._id.toString() || req.user.role === "admin"
       })
+    })
+    .catch(err => {
+      next(err)
+    })
+})
+
+router.get("/toilets/:toiletId/delete", loginCheck(), (req, res, next) => {
+  const query = {
+    _id: req.params.toiletId
+  };
+
+  if (req.user.role !== "admin") {
+    query.adder = req.user._id;
   }
 
-)
+  Toilet.deleteOne(query)
+    .then(() => {
+      res.redirect("/toilets")
+    })
+    .catch(err => {
+      next(err)
+    })
+})
 
 
 

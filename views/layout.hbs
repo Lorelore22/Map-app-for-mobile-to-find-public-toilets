@@ -16,22 +16,24 @@
   <link rel='stylesheet'
     href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css'
     type='text/css' />
-    
+
   <link rel="stylesheet" href="/stylesheets/style.css" />
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
 
-  <nav> 
+  <nav>
     <a href="/">Home</a>
     {{#if loggedIn}}
+    <a href="/toilets">MyToilets</a>
     <a href="/auth/logout">Logout</a>
+
     {{else}}
     <a href="/auth/login">Login</a>
     <a href="/auth/signup">Signup</a>
     {{/if}}
-    
+
   </nav>
 
   {{{body}}}

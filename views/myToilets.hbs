@@ -1,0 +1,14 @@
+{{#if toilets}}
+<h1>{{user.username}} Toilets</h1>
+{{else}}
+<p>No toilets to display!</p>
+{{/if}}
+
+{{#each toilets}}
+<div>
+  <a href="/toilets/{{_id}}">{{toiletType}} Toilet </a>
+
+</div>
+
+
+{{/each}}
