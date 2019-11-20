@@ -33,6 +33,15 @@ router.get('/api/toiletcoordinates', (req, res, next) => {
 })
 
 
+router.get('/aboutus', (req, res, next) => {
+  res.render('aboutUs.hbs')
+})
+
+
+router.get('/donate', (req, res, next) => {
+  res.render('donate.hbs')
+})
+
 
 // router.get("/api/points", (req, res, next) => {
 //   Point.find() // toilet?
