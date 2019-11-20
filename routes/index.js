@@ -175,7 +175,8 @@ router.get("/toilets", (req, res, next) => {
     }) ///////////////////////////////////////////////////////////////
     .then(toilets => {
       res.render("myToilets.hbs", {
-        toilets: toilets
+        toilets: toilets,
+        loggedIn: req.user
       });
     })
     .catch(err => {
@@ -192,7 +193,8 @@ router.get("/toilets/:toiletId", loginCheck(), (req, res, next) => {
       res.render("toiletDetails.hbs", {
         //layout: false,
         toilet: toilet,
-        showDelete: toilet.adder._id.toString() === req.user._id.toString() || req.user.role === "admin"
+        showDelete: toilet.adder._id.toString() === req.user._id.toString() || req.user.role === "admin",
+        loggedIn: req.user
       })
     })
     .catch(err => {
@@ -222,7 +224,8 @@ router.get("/toilets/edit/:toiletId", (req, res) => {
   Toilet.findById(req.params.toiletId)
     .then(toilet => {
       res.render("toiletEdit.hbs", {
-        toilet
+        toilet: toilet,
+        loggedIn: req.user
       });
     })
     .catch(err => {
