@@ -129,7 +129,7 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
 
 
   Toilet.findByIdAndUpdate({
-        _id: id,
+        _id: id
 
       },
       //// Destructuring  !!!!!!!!!!!!!!!!!!!!!!!!!! :)
@@ -218,7 +218,86 @@ router.get("/toilets/:toiletId/delete", loginCheck(), (req, res, next) => {
     })
 })
 
+router.get("/toilets/edit/:toiletId", (req, res) => {
+  Toilet.findById(req.params.toiletId)
+    .then(toilet => {
+      res.render("toiletEdit.hbs", {
+        toilet
+      });
+    })
+    .catch(err => {
+      next(err);
+    })
+})
 
+router.post("/toilets/edit/:toiletId", (req, res) => {
+
+  const id = req.params.toiletId
+  const {
+    toiletType,
+    isFree,
+    price,
+    cleanliness,
+    experience,
+    soap,
+
+    handDryer,
+    paperTowels,
+    clothTowels,
+    other,
+    none,
+
+    changingTableMen,
+    changingTableWomen,
+    feminineProducts,
+    trashCan,
+
+    genderSensitivity,
+    barrierFree,
+
+    image
+
+  } = req.body
+
+  Toilet.findByIdAndUpdate({
+        _id: id
+      },
+      /// Destructuring
+      {
+        toiletType,
+        isFree,
+        price,
+        cleanliness,
+        experience,
+        soap,
+
+        handDryer,
+        paperTowels,
+        clothTowels,
+        other,
+        none,
+
+        changingTableMen,
+        changingTableWomen,
+        feminineProducts,
+        trashCan,
+
+        genderSensitivity,
+        barrierFree,
+
+        image,
+        adder: req.user._id
+
+      }, {
+        new: true
+      })
+    .then((toilet) => {
+      res.redirect("/toilets/" + req.params.toiletId);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
 
 
 // router.post("/toiletform/:toiletId", loginCheck(), (req, res, next) => {

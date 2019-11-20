@@ -1,0 +1,98 @@
+<h1>Edit Toilet</h1>
+
+{{#with toilet}}
+
+<form action="/toilets/edit/{{_id}}" method="post">
+  <label for="toiletType" id="toiletType">Location type</label>
+  <select name="toiletType" required="true">
+    <option value="Public">Public</option>
+    <option value="Restaurant/cafe">Restaurants and cafes</option>
+    <option value="Train station">Train station</option>
+    <option value="Bus station">Bus station</option>
+    <option value="Museum">Museum</option>
+    <option value="Gas station">Gas station</option>
+    <option value="Bar/club">Bar and clubs</option>
+    <option value="Other">Other</option>
+  </select>
+
+
+  <p>Free?</p>
+  <input type="radio" name="isFree" id="isFree" value={{isFree}} required="true">
+  <label for="isFree">Yes</label>
+  <input type="radio" name="isFree" id="isFree" value={{isFree}}>
+  <label for="isFree">No</label>
+  {{!-- IF MACHEN --}}
+  <label for="price">Price</label>
+  <input type="number" name="price" id="price" value={{price}}>
+
+
+  <label name="cleanliness" id="cleanliness">Cleanliness (5 is the best!)</label>
+  <select>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+
+
+  <label name="experience" id="experience">Experience (5 is the best!)</label>
+  <select>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+
+
+
+  <p>Soap?</p>
+  <input type="radio" name="soap" id="soap" value={{soap}}>
+  <label for="soap">Yes</label>
+  <input type="radio" name="soap" id="soap" value={{soap}}>
+  <label for="soap">No</label>
+
+  <p>Hand-drying options</p>
+  <input type="checkbox" name="handDryer" value={{handDryer}}>
+  <label for="handDryer"></label>hand dryer</input>
+  <input type="checkbox" name="paperTowels" value={{paperTowels}}>
+  <label for="paperTowels">paper towels</label>
+  <input type="checkbox" name="clothTowels" value={{clothTowels}}>
+  <label for="clothTowels">cloth towels</label>
+  <input type="checkbox" name="other" value={{other}}>
+  <label for="other">other</label>
+  <input type="checkbox" name="none" value={{none}}>
+  <label for="none">none</label>
+
+
+  <p>Features</p>
+  <input type="checkbox" name="changingTableMen" value={{changingTableMen}}>changing table—men</input>
+  <input type="checkbox" name="changingTableWomen" value={{changingTableWomen}}>changing table—women</input>
+  <input type="checkbox" name="feminineProducts" value={{feminineProducts}}>feminine products</input>
+  <input type="checkbox" name="trashCan" value="trash can">{{trashCan}}</input>
+
+
+  <p>Accessibility</p>
+  <input type="checkbox" name="genderSensitivity" value={{genderSensitivity}}>gender-sensitive/nonbinary</input>
+  <input type="checkbox" name="barrierFree" value={{barrierFree}}>barrier-free</input>
+
+  <label>Upload a picture</label>
+  <input name="image" type="file" size="40" accept="image/jpeg">
+
+
+  {{!-- Nicht vergessen: comments --}}
+
+
+  <button type="submit">Add</button>
+
+
+</form>
+
+{{/with}}
+
+
+
+<a href="/">Back to map</a>
