@@ -22,11 +22,20 @@ const loginCheck = () => {
 };
 
 
+router.get('/api/toiletcoordinates', (req, res, next) => {
+  Toilet.find().then(toilets => {
+    res.json(toilets)
+  }).catch(err => {
+    next(err)
+  })
+})
+
+
 
 // router.get("/api/points", (req, res, next) => {
-//   Point.find()
+//   Point.find() // toilet?
 //     .then(points => {
-//       res.json(points);
+//       res.json(points); // coords
 //     })
 //     .catch(err => {
 //       next(err);
