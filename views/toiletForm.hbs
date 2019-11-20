@@ -1,7 +1,7 @@
 <h1>Add a toilet</h1>
 
 <form action="/updateToilet/{{toilet._id}}" method="post">
-  <label name="toiletType" id="toiletType">Location type</label>
+  <label for="toiletType" id="toiletType">Location type</label>
   <select name="toiletType" required="true">
     <option value="Public">Public</option>
     <option value="Restaurant/cafe">Restaurants and cafes</option>
@@ -12,7 +12,7 @@
     <option value="Bar/club">Bar and clubs</option>
     <option value="Other">Other</option>
   </select>
-  
+
 
   <p>Free?</p>
   <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
@@ -54,23 +54,28 @@
   <label for="soap">No</label>
 
   <p>Hand-drying options</p>
-  <input type="checkbox" name="handDrying" value="hand dryer">hand dryer</input>
-  <input type="checkbox" name="handDrying" value="paper towels">paper towels</input>
-  <input type="checkbox" name="handDrying" value="cloth towels">cloth towels</input>
-  <input type="checkbox" name="handDrying" value="other">other</input>
-  <input type="checkbox" name="handDrying" value="none">none</input>
+  <input type="checkbox" name="handDryer" value="hand dryer">
+  <label for="handDryer"></label>hand dryer</input>
+  <input type="checkbox" name="paperTowels" value="paper towels">
+  <label for="paperTowels">paper towels</label>
+  <input type="checkbox" name="clothTowels" value="cloth towels">
+  <label for="clothTowels">cloth towels</label>
+  <input type="checkbox" name="other" value="other">
+  <label for="other">other</label>
+  <input type="checkbox" name="none" value="none">
+  <label for="none">none</label>
 
 
   <p>Features</p>
-  <input type="checkbox" name="features" value="changing table—men">changing table—men</input>
-  <input type="checkbox" name="features" value="changing table—women">changing table—women</input>
-  <input type="checkbox" name="features" value="feminine products">feminine products</input>
-  <input type="checkbox" name="features" value="trash can">trash can</input>
+  <input type="checkbox" name="changingTableMen" value="changing table—men">changing table—men</input>
+  <input type="checkbox" name="changingTableWomen" value="changing table—women">changing table—women</input>
+  <input type="checkbox" name="feminineProducts" value="feminine products">feminine products</input>
+  <input type="checkbox" name="trashCan" value="trash can">trash can</input>
 
 
   <p>Accessibility</p>
-  <input type="checkbox" name="accessibility" value="gender-sensitive/nonbinary">gender-sensitive/nonbinary</input>
-  <input type="checkbox" name="accessibility" value="barrier-free">barrier-free</input>
+  <input type="checkbox" name="genderSensitivity" value="gender-sensitive/nonbinary">gender-sensitive/nonbinary</input>
+  <input type="checkbox" name="barrierFree" value="barrier-free">barrier-free</input>
 
   <label>Upload a picture</label>
   <input name="image" type="file" size="40" accept="image/jpeg">

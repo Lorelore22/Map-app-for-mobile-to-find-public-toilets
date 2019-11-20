@@ -6,7 +6,9 @@ const Toilet = require("../models/Toilet");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index", { loggedIn: req.user});
+  res.render("index", {
+    loggedIn: req.user
+  });
 });
 
 
@@ -57,8 +59,7 @@ router.get('/api/toiletcoordinates', (req, res, next) => {
 
 
 router.get("/toiletform/:toiletId", loginCheck(), (req, res) => {
-  console.log(req.body);
-  Toilet.findOneAndUpdate(req.params.toiletId)
+  Toilet.findById(req.params.toiletId)
     .then(toilet => {
       res.render("toiletForm", {
         toilet
@@ -68,14 +69,14 @@ router.get("/toiletform/:toiletId", loginCheck(), (req, res) => {
 
 router.post("/addToilet", loginCheck(), (req, res, next) => {
   console.log("entering post", req.body);
-  const coordArr = [req.body.lat, req.body.lng]
+  const coordArr = [parseFloat(req.body.lng), parseFloat(req.body.lat)]
   Toilet.create({
       coordinates: coordArr
       // user
     })
     .then(toilet => {
       // res.send(toilet)
-      console.log("should redirect")
+      console.log("toilet created with coords", toilet)
       res.redirect(`/toiletform/${toilet._id}`);
     })
     .catch(err => {
@@ -101,17 +102,28 @@ router.get("/toiletDetails/:toiletId", loginCheck(), (req, res, next) => {
 router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
     const id = req.params.toiletId
     const {
-      type,
+      toiletType,
       isFree,
       price,
       cleanliness,
       experience,
       soap,
-      handDrying,
-      features,
-      accessibility,
-      image,
-      coordinates
+
+      handDryer,
+      paperTowels,
+      clothTowels,
+      other,
+      none,
+
+      changingTableMen,
+      changingTableWomen,
+      feminineProducts,
+      trashCan,
+
+      genderSensitivity,
+      barrierFree,
+
+      image
     } = req.body
 
     Toilet.findByIdAndUpdate({
@@ -119,17 +131,28 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
         },
         //// Destructuring  !!!!!!!!!!!!!!!!!!!!!!!!!! :)
         {
-          type,
+          toiletType,
           isFree,
           price,
           cleanliness,
           experience,
           soap,
-          handDrying,
-          features,
-          accessibility,
-          image,
-          coordinates
+
+          handDryer,
+          paperTowels,
+          clothTowels,
+          other,
+          none,
+
+          changingTableMen,
+          changingTableWomen,
+          feminineProducts,
+          trashCan,
+
+          genderSensitivity,
+          barrierFree,
+
+          image
         }, {
           new: true
         })

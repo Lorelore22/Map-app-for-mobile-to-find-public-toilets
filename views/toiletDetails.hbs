@@ -1,5 +1,5 @@
 {{#with toilet}}
-<h1>{{toiletType}} toilet: </h1> 
+<h1>{{toiletType}} toilet: </h1>
 {{!-- warum geht toiletType jetzt nicht mehr --}}
 
 
@@ -9,53 +9,18 @@
 <h2>Price: free</h2>
 {{/if}}
 
+{{#if cleanliness}}
 <p>Cleanliness: {{cleanliness}}</p>
 
 <p>Experiences: {{experience}}</p>
 
 <p>Soap: {{soap}}</p>
 
-<div>
-  {{#if handDrying}}
-<p>Hand-drying options: </p>
 {{/if}}
 
-  {{#each handDrying}}
-  <ul>
-  <li>
-    {{handDrying}}
-  </li></ul>
-  {{/each}}
-</div>
-
 <div>
-  {{#if features}}
-<p>Features: </p>
-{{/if}}
 
-  {{#each features}}
-  <ul>
-  <li>
-    {{features}}
-  </li></ul>
-  {{/each}}
 </div>
-
-
-<div>
-  {{#if accessibility}}
-<p>Accessibility: </p>
-{{/if}}
-
-  {{#each accessibility}}
-  <ul>
-  <li>
-    {{accessibility}}
-  </li></ul>
-  {{/each}}
-</div>
-
-
 
 
 

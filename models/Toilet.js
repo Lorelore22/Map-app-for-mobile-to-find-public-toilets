@@ -25,18 +25,23 @@ const toiletSchema = new Schema({
     type: String,
     enum: ["Yes", "No"]
   },
-  handDrying: {
-    type: String,
-    enum: ["hand dryer", "paper towels", "cloth towels", "other", "none"]
-  },
-  features: {
-    type: String,
-    enum: ["changing table—men", "changing table—women", "feminine products", "trash can"]
-  },
-  accessibility: {
-    type: String,
-    enum: ['gender-sensitive/nonbinary', 'barrier-free']
-  },
+
+
+
+  handDryer: String,
+  paperTowels: String,
+  clothTowels: String,
+  other: String,
+  none: String,
+
+  changingTableMen: String,
+  changingTableWomen: String,
+  feminineProducts: String,
+  trashCan: String,
+
+  genderSensitivity: String,
+  barrierFree: String,
+
   image: {
     type: String,
     default: '/images/dragon.png'
