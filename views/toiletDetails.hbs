@@ -1,11 +1,12 @@
 {{#with toilet}}
-<h1>{{toiletType}} toilet: </h1>
+<h1>{{toiletType}} toilet: </h1> 
+{{!-- warum geht toiletType jetzt nicht mehr --}}
 
 
 {{#if price}}
-<h2>{{price}} €</h2>
+<h2>Price: {{price}}€</h2>
 {{else}}
-<h2>free</h2>
+<h2>Price: free</h2>
 {{/if}}
 
 <p>Cleanliness: {{cleanliness}}</p>
@@ -14,15 +15,53 @@
 
 <p>Soap: {{soap}}</p>
 
+<div>
+  {{#if handDrying}}
 <p>Hand-drying options: </p>
-<ul>
+{{/if}}
+
   {{#each handDrying}}
+  <ul>
   <li>
     {{handDrying}}
-  </li>
+  </li></ul>
   {{/each}}
-</ul>
+</div>
+
+<div>
+  {{#if features}}
+<p>Features: </p>
+{{/if}}
+
+  {{#each features}}
+  <ul>
+  <li>
+    {{features}}
+  </li></ul>
+  {{/each}}
+</div>
+
+
+<div>
+  {{#if accessibility}}
+<p>Accessibility: </p>
+{{/if}}
+
+  {{#each accessibility}}
+  <ul>
+  <li>
+    {{accessibility}}
+  </li></ul>
+  {{/each}}
+</div>
+
+
+
+
 
 {{/with}}
+
+
+<h2>figure out image upload routing</h2>
 
 <a href="/">Back to map</a>
