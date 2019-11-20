@@ -68,12 +68,19 @@
   <label for="none">none</label>
 
 
-  <p>Features</p>
-  <input type="checkbox" name="changingTableMen" value={{changingTableMen}}>changing table—men</input>
+  <p>Additional features</p>
+  {{!-- <input type="checkbox" name="changingTableMen" value={{changingTableMen}}>changing table—men</input>
   <input type="checkbox" name="changingTableWomen" value={{changingTableWomen}}>changing table—women</input>
   <input type="checkbox" name="feminineProducts" value={{feminineProducts}}>feminine products</input>
-  <input type="checkbox" name="trashCan" value="trash can">{{trashCan}}</input>
-
+  <input type="checkbox" name="trashCan" value="trash can">{{trashCan}}</input> --}}
+  <input type="checkbox" name="tableMen" value=" ✔️  Changing table in men's room">
+  <label for="tableMen"></label>Men's changing table</input>
+  <input type="checkbox" name="tableWomen" value=" ✔️ Changing table in women's room">
+  <label for="tableWomen"></label>Women's changing table</input>
+  <input type="checkbox" name="products" value=" ✔️  Feminine hygiene products">
+  <label for="products"></label>Feminine products</input>
+  <input type="checkbox" name="trash" value=" ✔️  Trash can">
+  <label for="trash"></label>trash</input>
 
   <p>Accessibility</p>
   <input type="checkbox" name="genderSensitivity" value={{genderSensitivity}}>gender-sensitive/nonbinary</input>
