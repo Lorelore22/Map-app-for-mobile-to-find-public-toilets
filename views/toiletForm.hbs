@@ -1,122 +1,132 @@
-<h1>Add a toilet</h1>
+<div class="toilet-form-container">
+  <h1>Add a toilet</h1>
 
-<form action="/updateToilet/{{toilet._id}}" method="post">
-  <label for="toiletType" id="toiletType">Location type</label>
-  <select name="toiletType" required="true">
-    <option value="Public">Public</option>
-    <option value="Restaurant/cafe">Restaurants and cafes</option>
-    <option value="Train station">Train station</option>
-    <option value="Bus station">Bus station</option>
-    <option value="Museum">Museum</option>
-    <option value="Gas station">Gas station</option>
-    <option value="Bar/club">Bar and clubs</option>
-    <option value="Other">Other</option>
-  </select>
+  <form class="form" action="/updateToilet/{{toilet._id}}" method="post">
+    <label for="toiletType" id="toiletType">Location type</label>
+    <select name="toiletType" required="true">
+      <option value="Public">Public</option>
+      <option value="Restaurant/cafe">Restaurants and cafes</option>
+      <option value="Train station">Train station</option>
+      <option value="Bus station">Bus station</option>
+      <option value="Museum">Museum</option>
+      <option value="Gas station">Gas station</option>
+      <option value="Bar/club">Bar and clubs</option>
+      <option value="Other">Other</option>
+    </select>
 
-  <br>
+    <br>
 
-  <label for="location">Location: </label>
-  <input type="text" name="location" id="location" value="{{toilet.location}}">
+    <label for="location">Location: </label>
+    <input type="text" name="location" id="location" value="{{toilet.location}}">
 
-  <p>Free?</p>
-  <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
-  <label for="isFree">Yes</label>
+    <p>Free?</p>
+    <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
+    <label for="isFree">Yes</label>
 
-  <br>
+    <br>
 
-  <input type="radio" name="isFree" id="isFree" value="No">
-  <label for="isFree">No</label>
-  {{!-- IF MACHEN --}}
+    <input type="radio" name="isFree" id="isFree" value="No">
+    <label for="isFree">No</label>
+    {{!-- IF MACHEN --}}
 
 
-  <label for="price">Price</label>
-  <input type="number" name="price" id="price" step="0.01" min="0" placeholder="0.00">
+    <label for="price">Price</label>
+    <input type="number" name="price" id="price" step="0.01" min="0" placeholder="0.00">
 
-  <br>
+    <br>
 
-  <label for="cleanliness" id="cleanliness">Cleanliness (5 is the cleanest!)</label>
-  <select name='cleanliness'>
-    <option value="💩">0</option>
-    <option value="⭐">1</option>
-    <option value="⭐⭐">2</option>
-    <option value="⭐⭐⭐">3</option>
-    <option value="⭐⭐⭐⭐">4</option>
-    <option value="⭐⭐⭐⭐⭐">5</option>
-  </select>
+    <label for="cleanliness" id="cleanliness">Cleanliness (5 is the cleanest!)</label>
+    <select name='cleanliness'>
+      <option value="💩">0</option>
+      <option value="⭐">1</option>
+      <option value="⭐⭐">2</option>
+      <option value="⭐⭐⭐">3</option>
+      <option value="⭐⭐⭐⭐">4</option>
+      <option value="⭐⭐⭐⭐⭐">5</option>
+    </select>
 
-  <br>
+    <br>
 
-  <label for="experience" id="experience">Experience (5 is the best!)</label>
-  <select name="experience">
-    <option value="👎">0</option>
-    <option value="⭐">1</option>
-    <option value="⭐⭐">2</option>
-    <option value="⭐⭐⭐">3</option>
-    <option value="⭐⭐⭐⭐">4</option>
-    <option value="⭐⭐⭐⭐⭐">5</option>
-  </select>
+    <label for="experience" id="experience">Experience (5 is the best!)</label>
+    <select name="experience">
+      <option value="👎">0</option>
+      <option value="⭐">1</option>
+      <option value="⭐⭐">2</option>
+      <option value="⭐⭐⭐">3</option>
+      <option value="⭐⭐⭐⭐">4</option>
+      <option value="⭐⭐⭐⭐⭐">5</option>
+    </select>
 
-  <br>
+    <br>
 
-  <p>Soap?</p>
-  <input type="radio" name="soap" id="soap" value=' ✔️  soap'>
-  <label for="soap">Yes</label>
-  <input type="radio" name="soap" id="soap" value='❌  no soap'>
-  <label for="soap">No</label>
+    <p>Soap?</p>
+    <input type="radio" name="soap" id="soap" value=' ✔️  soap'>
+    <label for="soap">Yes</label>
+    <input type="radio" name="soap" id="soap" value='❌  no soap'>
+    <label for="soap">No</label>
 
-  <br>
+    <br>
 
-  <p>Hand-drying options</p>
-  <input type="checkbox" name="handDryer" value=' ✔️  hand dryer'>
-  <label for="handDryer"></label>hand dryer</input>
-  <input type="checkbox" name="paperTowels" value=' ✔️  paper towels'>
-  <label for="paperTowels">paper towels</label>
-  <input type="checkbox" name="clothTowels" value=' ✔️  cloth towels'>
-  <label for="clothTowels">cloth towels</label>
-  <input type="checkbox" name="other" value=' ✔️  other'>
-  <label for="other">other</label>
-  <input type="checkbox" name="none" value='❌ no drying options'>
-  <label for="none">none</label>
+    <p>Hand-drying options:</p>
+    <input type="checkbox" name="handDryer" value=' ✔️  hand dryer'>
+    <label for="handDryer">hand dryer</label>
+    <br>
+    <input type="checkbox" name="paperTowels" value=' ✔️  paper towels'>
+    <label for="paperTowels">paper towels</label>
+    <br>
+    <input type="checkbox" name="clothTowels" value=' ✔️  cloth towels'>
+    <label for="clothTowels">cloth towels</label>
+    <br>
+    <input type="checkbox" name="other" value=' ✔️  other'>
+    <label for="other">other</label>
+    <br>
+    <input type="checkbox" name="none" value='❌ no drying options'>
+    <label for="none">none</label>
 
-  <br>
+    <br>
 
-  <p>Additional features</p>
-  <input type="checkbox" name="changingTableMen" value=" ✔️  Changing table in men's room">
-  <label for="changingTableMen">Men's changing table</label>
-  <input type="checkbox" name="changingTableWomen" value=" ✔️ Changing table in women's room">
-  <label for="changingTableWomen">Women's changing table</label>
-  <input type="checkbox" name="feminineProducts" value=" ✔️  Feminine hygiene products">
-  <label for="FeminineProducts">Feminine products</label>
-  <input type="checkbox" name="trashCan" value=" ✔️  Trash can">
-  <label for="trashCan">trash</label>
+    <p>Additional features:</p>
+    <input type="checkbox" name="changingTableMen" value=" ✔️  Changing table in men's room">
+    <label for="changingTableMen">Men's changing table</label>
+    <br>
+    <input type="checkbox" name="changingTableWomen" value=" ✔️ Changing table in women's room">
+    <label for="changingTableWomen">Women's changing table</label>
+    <br>
+    <input type="checkbox" name="feminineProducts" value=" ✔️  Feminine hygiene products">
+    <label for="FeminineProducts">Feminine products</label>
+    <br>
+    <input type="checkbox" name="trashCan" value=" ✔️  Trash can">
+    <label for="trashCan">trash</label>
 
-  <br>
+    <br>
 
-  <p>Accessibility</p>
-  <input type="checkbox" name="genderSensitivity" value="✔️  Nonbinary options available">
-  <label for="genderSensitivity">Nonbinary options available</label>
-  <input type="checkbox" name="barrierFree" value="✔️ Wheelchair accessible">
-  <label for='barrierFree'>Barrier-free</label>
+    <p>Accessibility</p>
+    <input type="checkbox" name="genderSensitivity" value="✔️  Nonbinary options available">
+    <label for="genderSensitivity">Nonbinary options available</label>
+    <br>
+    <input type="checkbox" name="barrierFree" value="✔️ Wheelchair accessible">
+    <label for='barrierFree'>Barrier-free</label>
 
-  <br>
+    <br>
 
-  <label for="comment">Add a comment!!!!</label>
-  <input type="text" name="comment" id="comment" value={{comment}}>
+    <label for="comment">Add a comment: </label>
+    <input type="text" name="comment" id="comment" value={{comment}}>
 
-  <br>
+    <br>
 
-  {{!-- <label>Upload a picture</label>
+    {{!-- <label>Upload a picture</label>
   <input name="image" type="file" size="40" accept="image/jpeg"> --}}
 
 
-  {{!-- Nicht vergessen: comments --}}
+    {{!-- Nicht vergessen: comments --}}
 
 
-  <button class="form-button" type="submit">Save</button>
+    <button class="form-button" type="submit">Save</button>
 
 
-</form>
+  </form>
 
 
 
-<a href="/">Back to map</a>
+
+</div>

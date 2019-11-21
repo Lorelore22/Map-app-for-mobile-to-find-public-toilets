@@ -4,11 +4,14 @@
 <p>No toilets to display!</p>
 {{/if}}
 
-{{#each toilets}}
 <div class="toilet-list">
-  <a  href="/toilets/{{_id}}">{{toiletType}} Toilet {{location}}</a>
 
-</div>
+  <div>
+    {{#each toilets}}
+    <div class="each-toilet">
+      <a href="/toilets/{{_id}}">{{toiletType}} Toilet: {{location}}</a>
+    </div>
 
+    {{/each}}
 
-{{/each}}
+  </div>

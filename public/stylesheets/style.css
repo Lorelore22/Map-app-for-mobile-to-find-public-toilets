@@ -194,4 +194,33 @@ form button:hover {
 .bottom-menu {
   text-align: center; }
 
+.toilet-form-container {
+  margin: 4% 6%; }
+
+.toilet-form-container form label {
+  margin-bottom: 6%;
+  color: #0E3F7A;
+  font-size: 1.1rem; }
+
+.toilet-form-container form p {
+  margin-bottom: 6%;
+  color: #0E3F7A;
+  font-size: 1.1rem; }
+
+.toilet-form-container form input {
+  margin-bottom: 6%; }
+
+.form {
+  margin-top: 7%; }
+
+.each-toilet {
+  margin: 3%;
+  font-size: 1.2rem; }
+
+.crud-functions {
+  margin: 5%; }
+
+.crud-functions a {
+  font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */

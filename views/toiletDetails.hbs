@@ -1,5 +1,5 @@
 {{#with toilet}}
-<h1 class="log-heads">{{location}} {{toiletType}} toilet: </h1>
+<h1 class="log-heads">{{toiletType}} toilet: <br> {{location}} </h1>
 
 <div>
   {{#if price}}
@@ -34,31 +34,31 @@
 
 
 <div>
-<div  class="details">
-  {{#if handDryer}}
-  <p>{{handDryer}}</p>
-  {{/if}}
-</div>
-<div  class="details">
-  {{#if paperTowels}}
-  </p>{{paperTowels}}</p>
-  {{/if}}
-</div>
-<div class="details">
-  {{#if clothTowels}}
-  <p> {{clothTowels}}</p>
-  {{/if}}
-</div>
-<div class="details">
-  {{#if other}}
-  <p> {{other}}</p>
-  {{/if}}
-</div>
-<div class="details">
-  {{#if none}}
-  <p> ❌ no drying options</p>
-  {{/if}}
-</div>
+  <div class="details">
+    {{#if handDryer}}
+    <p>{{handDryer}}</p>
+    {{/if}}
+  </div>
+  <div class="details">
+    {{#if paperTowels}}
+    </p>{{paperTowels}}</p>
+    {{/if}}
+  </div>
+  <div class="details">
+    {{#if clothTowels}}
+    <p> {{clothTowels}}</p>
+    {{/if}}
+  </div>
+  <div class="details">
+    {{#if other}}
+    <p> {{other}}</p>
+    {{/if}}
+  </div>
+  <div class="details">
+    {{#if none}}
+    <p> ❌ no drying options</p>
+    {{/if}}
+  </div>
 </div>
 
 
@@ -94,28 +94,29 @@
     {{/if}}
   </div>
   <div class="details">
-  {{#if barrierFree}}
-  <p>{{barrierFree}}</p>
-  {{/if}}
-</div>
+    {{#if barrierFree}}
+    <p>{{barrierFree}}</p>
+    {{/if}}
+  </div>
 
 
-<div class="details">
-  {{#if comment}}
-  <p>Comment: {{comment}}</p>
-  {{else}}
-  <p>No additional comments</p>
-  {{/if}}
-</div>
+  <div class="details">
+    {{#if comment}}
+    <p>Comment: {{comment}}</p>
+    {{else}}
+    <p>No additional comments</p>
+    {{/if}}
+  </div>
 
-{{/with}}
+  {{/with}}
 
-
-{{!-- {{#if showDelete}} --}}
-<a href="/toilets/{{toilet.id}}/delete">Delete this toilet</a>
-<a href="/toilets/edit/{{toilet.id}}">Edit Toilet</a>
-{{!-- {{/if}} --}}
+  <div>
 
 
+  </div>
 
-<a href="/">Back to map</a>
+  <div class="crud-functions">
+    <a href="/toilets/{{toilet.id}}/delete"> Delete this toilet | </a>
+    <a href="/toilets/edit/{{toilet.id}}">Edit Toilet | </a>
+    <a href="/">Back to map</a>
+  </div>

@@ -78,7 +78,7 @@ let toilets = [
 
     genderSensitivity: null,
 
-    handDryer: " ✔️  hand dryer",
+    handDryer: " ✔️  Hand dryer",
 
     isFree: "No",
 
@@ -88,11 +88,11 @@ let toilets = [
 
     other: null,
 
-    paperTowels: " ✔️  paper towels",
+    paperTowels: " ✔️  Paper towels",
 
     price: 0.5,
 
-    soap: "Yes",
+    soap: "✔️  Soap",
 
     toiletType: "Train station",
 
@@ -130,7 +130,7 @@ let toilets = [
 
     location: "somewhere in the Berlin wilderness",
 
-    none: "❌ no drying options",
+    none: "❌ No drying options",
 
     other: null,
 
@@ -138,7 +138,7 @@ let toilets = [
 
     price: null,
 
-    soap: "No",
+    soap: "❌  No soap",
 
     toiletType: "Public",
 
@@ -180,11 +180,11 @@ let toilets = [
 
     other: null,
 
-    paperTowels: " ✔️  paper towels",
+    paperTowels: " ✔️  Paper towels",
 
     price: 0.5,
 
-    soap: "Yes",
+    soap: "✔️  Soap",
 
     toiletType: "Restaurant/cafe",
 
@@ -218,7 +218,7 @@ let toilets = [
 
     genderSensitivity: null,
 
-    handDryer: " ✔️  hand dryer",
+    handDryer: " ✔️  Hand dryer",
 
     isFree: "Yes",
 
@@ -228,11 +228,11 @@ let toilets = [
 
     other: null,
 
-    paperTowels: " ✔️  paper towels",
+    paperTowels: " ✔️  Paper towels",
 
     price: null,
 
-    soap: "Yes",
+    soap: "✔️  Soap",
 
     toiletType: "Museum",
 
@@ -266,7 +266,7 @@ let toilets = [
 
     genderSensitivity: null,
 
-    handDryer: " ✔️  hand dryer",
+    handDryer: " ✔️  Hand dryer",
 
     isFree: "No",
 
@@ -276,11 +276,11 @@ let toilets = [
 
     other: null,
 
-    paperTowels: " ✔️  paper towels",
+    paperTowels: " ✔️  Paper towels",
 
     price: 0.5,
 
-    soap: "Yes",
+    soap: "✔️  Soap",
 
     toiletType: "Restaurant/cafe",
 
