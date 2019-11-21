@@ -5,12 +5,26 @@ body {
   // padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: white;
+
 }
 
 h1 {
   font-size: x-large;
   color: #0E3F7A;
   font-weight: bold;
+}
+
+h2 {
+  color: #0E3F7A;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+#instruction {
+  color: #0E3F7A;
+  font-weight: 700;
+  font-size: medium;
+  margin: 0%
 }
 
 nav {
@@ -41,6 +55,14 @@ nav a {
   justify-content: space-evenly;
   align-items: center;
 }
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+
 
 
 
