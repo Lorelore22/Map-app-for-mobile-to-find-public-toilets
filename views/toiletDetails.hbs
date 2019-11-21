@@ -99,17 +99,23 @@
 </div>
 
 
-
+<div>
+  {{#if comment}}
+  <p>Comment: {{comment}}</p>
+  {{else}}
+  <p>No additional comments</p>
+  {{/if}}
+</div>
 
 {{/with}}
 
 
 <h2>figure out image upload routing</h2>
 
-{{#if showDelete}}
+{{!-- {{#if showDelete}} --}}
 <a href="/toilets/{{toilet.id}}/delete">Delete this toilet</a>
 <a href="/toilets/edit/{{toilet.id}}">Edit Toilet</a>
-{{/if}}
+{{!-- {{/if}} --}}
 
 
 
