@@ -14,18 +14,19 @@
   </select>
 
 
-  <p>Free?</p>
+ <p>Free?</p>
   <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
   <label for="isFree">Yes</label>
   <input type="radio" name="isFree" id="isFree" value="No">
   <label for="isFree">No</label>
   {{!-- IF MACHEN --}}
+
   <label for="price">Price</label>
-  <input type="number" name="price" id="price">
+  <input type="number" name="price" id="price" value={{price}}>
 
 
-  <label name="cleanliness" id="cleanliness">Cleanliness (5 is the best!)</label>
-  <select>
+  <label for="cleanliness" id="cleanliness">Cleanliness (5 is the cleanest!)</label>
+  <select name='cleanliness'>
     <option value="0">0</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -35,8 +36,8 @@
   </select>
 
 
-  <label name="experience" id="experience">Experience (5 is the best!)</label>
-  <select>
+   <label for="experience" id="experience">Experience (5 is the best!)</label>
+  <select name="experience">
     <option value="0">0</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -48,34 +49,40 @@
 
 
   <p>Soap?</p>
-  <input type="radio" name="soap" id="soap" value="Yes">
+  <input type="radio" name="soap" id="soap" value=' ✔️  soap'>
   <label for="soap">Yes</label>
-  <input type="radio" name="soap" id="soap" value="No">
+  <input type="radio" name="soap" id="soap" value='❌  no soap'>
   <label for="soap">No</label>
 
-  <p>Hand-drying options</p>
-  <input type="checkbox" name="handDryer" value="hand dryer">
+    <p>Hand-drying options</p>
+  <input type="checkbox" name="handDryer" value=' ✔️  hand dryer'>
   <label for="handDryer"></label>hand dryer</input>
-  <input type="checkbox" name="paperTowels" value="paper towels">
+  <input type="checkbox" name="paperTowels" value=' ✔️  paper towels'>
   <label for="paperTowels">paper towels</label>
-  <input type="checkbox" name="clothTowels" value="cloth towels">
+  <input type="checkbox" name="clothTowels" value=' ✔️  cloth towels'>
   <label for="clothTowels">cloth towels</label>
-  <input type="checkbox" name="other" value="other">
+  <input type="checkbox" name="other" value=' ✔️  other'>
   <label for="other">other</label>
-  <input type="checkbox" name="none" value="none">
+  <input type="checkbox" name="none" value='❌ no drying options'>
   <label for="none">none</label>
 
 
-  <p>Features</p>
-  <input type="checkbox" name="changingTableMen" value="changing table—men">changing table—men</input>
-  <input type="checkbox" name="changingTableWomen" value="changing table—women">changing table—women</input>
-  <input type="checkbox" name="feminineProducts" value="feminine products">feminine products</input>
-  <input type="checkbox" name="trashCan" value="trash can">trash can</input>
-
+    <p>Additional features</p>
+   <input type="checkbox" name="tableMen" value=" ✔️  Changing table in men's room">
+   <label for="tableMen">Men's changing table</label>
+  <input type="checkbox" name="tableWomen" value=" ✔️ Changing table in women's room">
+  <label for="tableWomen">Women's changing table</label>
+  <input type="checkbox" name="products" value=" ✔️  Feminine hygiene products">
+  <label for="products">Feminine products</label>
+  <input type="checkbox" name="trash" value=" ✔️  Trash can">
+  <label for="trash">trash</label>
 
   <p>Accessibility</p>
-  <input type="checkbox" name="genderSensitivity" value="gender-sensitive/nonbinary">gender-sensitive/nonbinary</input>
-  <input type="checkbox" name="barrierFree" value="barrier-free">barrier-free</input>
+  <input type="checkbox" name="genderSensitivity" value="✔️  Nonbinary options available">
+  <label for="genderSensitivity">Nonbinary options available</label>
+  <input type="checkbox" name="barrierFree" value="✔️ Wheelchair accessible">
+  <label for='barrierFree'>Barrier-free</label>
+
 
   <label>Upload a picture</label>
   <input name="image" type="file" size="40" accept="image/jpeg">

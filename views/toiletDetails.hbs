@@ -1,33 +1,32 @@
-
 {{#with toilet}}
 <h1>{{toiletType}} toilet: </h1>
 
 <div>
-{{#if price}}
-<h2>Price: {{price}}€</h2>
-{{else}}
-<h2>Price: free</h2>
-{{/if}}
+  {{#if price}}
+  <h2>Price: {{price}}€</h2>
+  {{else}}
+  <h2>Price: free</h2>
+  {{/if}}
 </div>
 
 <div>
-{{#if cleanliness}}
-<p>Cleanliness: {{cleanliness}}</p>
-{{/if}}
-</div>
-
-
-<div>
-{{#if experience}}
-<p>Experiences: {{experience}}</p>
-{{/if}}
+  {{#if cleanliness}}
+  <p>Cleanliness: {{cleanliness}} (where 5 is best)</p>
+  {{/if}}
 </div>
 
 
 <div>
-{{#if soap}}
-<p>{{soap}}</p>
-{{/if}}
+  {{#if experience}}
+  <p>Experiences: {{experience}}</p>
+  {{/if}}
+</div>
+
+
+<div>
+  {{#if soap}}
+  <p>{{soap}}</p>
+  {{/if}}
 </div>
 
 
@@ -36,55 +35,69 @@
 
 <div></div>
 <div>
-{{#if handDryer}}
-<p>{{handDryer}}</p>
-{{/if}}
+  {{#if handDryer}}
+  <p>{{handDryer}}</p>
+  {{/if}}
 </div>
 <div>
-{{#if paperTowels}}
-</p>{{paperTowels}}</p>
-{{/if}}
+  {{#if paperTowels}}
+  </p>{{paperTowels}}</p>
+  {{/if}}
 </div>
 <div>
   {{#if clothTowels}}
-<p> {{clothTowels}}</p>
-{{/if}}
+  <p> {{clothTowels}}</p>
+  {{/if}}
 </div>
 <div>
   {{#if other}}
-<p> {{other}}</p>
-{{/if}}
+  <p> {{other}}</p>
+  {{/if}}
 </div>
 <div>
   {{#if none}}
-<p> {{none}}</p>
-{{/if}}
+  <p> ❌ no drying options</p>
+  {{/if}}
 </div>
 </div>
 
 
 <div>
+  <div>
+    {{#if tableMen}}
+    <p> ✔️  Changing table in men's room</p>
+    {{/if}}
+  </div>
+  <div>
+    {{#if tableWomen}}
+    <p>{{tableWomen}}</p>
+    {{/if}}
+  </div>
+  <div>
+    {{#if products}}
+    <p>{{products}}</p>
+    {{/if}}
+  </div>
+  <div>
+    {{#if trash}}
+    <p>{{trash}}</p>
+    {{/if}}
+  </div>
+</div>
+
+
+
 <div>
-{{#if tableMen}}
-<p>{{tableMen}}</p>
-{{/if}}
+  <div>
+    {{#if genderSensitivity}}
+    <p>{{genderSensitivity}}</p>
+    {{/if}}
+  </div>
+  {{#if barrierFree}}
+  <p>{{barrierFree}}</p>
+  {{/if}}
 </div>
-<div>
-{{#if tableWomen}}
-<p>{{tableWomen}}</p>
-{{/if}}
-</div>
-<div>
-{{#if products}}
-<p>{{products}}</p>
-{{/if}}
-</div>
-<div>
-{{#if trash}}
-<p>{{trash}}</p>
-{{/if}}
-</div>
-</div>
+
 
 
 

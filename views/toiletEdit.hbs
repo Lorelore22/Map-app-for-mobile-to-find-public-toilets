@@ -22,12 +22,14 @@
   <input type="radio" name="isFree" id="isFree" value={{isFree}}>
   <label for="isFree">No</label>
   {{!-- IF MACHEN --}}
+
   <label for="price">Price</label>
   <input type="number" name="price" id="price" value={{price}}>
 
 
-  <label name="cleanliness" id="cleanliness">Cleanliness (5 is the best!)</label>
-  <select>
+
+  <label for="cleanliness" id="cleanliness">Cleanliness (5 is the cleanest!)</label>
+  <select name='cleanliness'>
     <option value="0">0</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -37,8 +39,8 @@
   </select>
 
 
-  <label name="experience" id="experience">Experience (5 is the best!)</label>
-  <select>
+  <label for="experience" id="experience">Experience (5 is the best!)</label>
+  <select name="experience">
     <option value="0">0</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -69,22 +71,20 @@
 
 
   <p>Additional features</p>
-  {{!-- <input type="checkbox" name="changingTableMen" value={{changingTableMen}}>changing table—men</input>
-  <input type="checkbox" name="changingTableWomen" value={{changingTableWomen}}>changing table—women</input>
-  <input type="checkbox" name="feminineProducts" value={{feminineProducts}}>feminine products</input>
-  <input type="checkbox" name="trashCan" value="trash can">{{trashCan}}</input> --}}
-  <input type="checkbox" name="tableMen" value=" ✔️  Changing table in men's room">
-  <label for="tableMen"></label>Men's changing table</input>
+   <input type="checkbox" name="tableMen" value=" ✔️  Changing table in men's room">
+   <label for="tableMen">Men's changing table</label>
   <input type="checkbox" name="tableWomen" value=" ✔️ Changing table in women's room">
-  <label for="tableWomen"></label>Women's changing table</input>
+  <label for="tableWomen">Women's changing table</label>
   <input type="checkbox" name="products" value=" ✔️  Feminine hygiene products">
-  <label for="products"></label>Feminine products</input>
+  <label for="products">Feminine products</label>
   <input type="checkbox" name="trash" value=" ✔️  Trash can">
-  <label for="trash"></label>trash</input>
+  <label for="trash">trash</label>
 
   <p>Accessibility</p>
-  <input type="checkbox" name="genderSensitivity" value={{genderSensitivity}}>gender-sensitive/nonbinary</input>
-  <input type="checkbox" name="barrierFree" value={{barrierFree}}>barrier-free</input>
+  <input type="checkbox" name="genderSensitivity" value="✔️  Nonbinary options available">
+  <label for="genderSensitivity">Nonbinary options available</label>
+  <input type="checkbox" name="barrierFree" value="✔️ Wheelchair accessible">
+  <label for='barrierFree'>Barrier-free</label>
 
   <label>Upload a picture</label>
   <input name="image" type="file" size="40" accept="image/jpeg">
