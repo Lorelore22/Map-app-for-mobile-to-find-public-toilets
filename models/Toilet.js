@@ -54,7 +54,8 @@ const toiletSchema = new Schema({
     ref: "User"
   },
 
-  comment: String
+  comment: String,
+  location: String,
   // comments: [
   //   {
   //   type: Schema.Types.ObjectId,

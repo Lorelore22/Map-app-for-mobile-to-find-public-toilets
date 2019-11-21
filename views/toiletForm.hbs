@@ -15,6 +15,9 @@
 
   <br>
 
+  <label for="location">Location: </label>
+  <input type="text" name="location" id="location" value="{{toilet.location}}">
+
   <p>Free?</p>
   <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
   <label for="isFree">Yes</label>
@@ -79,13 +82,13 @@
 
   <p>Additional features</p>
   <input type="checkbox" name="changingTableMen" value=" ✔️  Changing table in men's room">
-  <label for="tableMen">Men's changing table</label>
+  <label for="changingTableMen">Men's changing table</label>
   <input type="checkbox" name="changingTableWomen" value=" ✔️ Changing table in women's room">
-  <label for="tableWomen">Women's changing table</label>
+  <label for="changingTableWomen">Women's changing table</label>
   <input type="checkbox" name="feminineProducts" value=" ✔️  Feminine hygiene products">
-  <label for="products">Feminine products</label>
+  <label for="FeminineProducts">Feminine products</label>
   <input type="checkbox" name="trashCan" value=" ✔️  Trash can">
-  <label for="trash">trash</label>
+  <label for="trashCan">trash</label>
 
   <br>
 
@@ -102,8 +105,8 @@
 
   <br>
 
-  <label>Upload a picture</label>
-  <input name="image" type="file" size="40" accept="image/jpeg">
+  {{!-- <label>Upload a picture</label>
+  <input name="image" type="file" size="40" accept="image/jpeg"> --}}
 
 
   {{!-- Nicht vergessen: comments --}}

@@ -139,6 +139,7 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
     barrierFree,
 
     comment,
+    location,
 
     image
 
@@ -173,7 +174,7 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
         barrierFree,
 
         comment,
-
+        location,
         image,
         adder: req.user._id
       }, {
@@ -276,7 +277,8 @@ router.post("/toilets/edit/:toiletId", (req, res) => {
 
     genderSensitivity,
     barrierFree,
-
+    location,
+    comment,
     image
 
   } = req.body
@@ -306,7 +308,8 @@ router.post("/toilets/edit/:toiletId", (req, res) => {
 
         genderSensitivity,
         barrierFree,
-
+        location,
+        comment,
         image,
         adder: req.user._id
 

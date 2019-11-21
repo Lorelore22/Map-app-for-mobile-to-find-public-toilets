@@ -15,6 +15,8 @@
     <option value="Other">Other</option>
   </select>
 
+ <label for="location">Location: </label>
+  <input type="text" name="location" id="location" value='{{location}}'>
 
   <p>Free?</p>
   <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
@@ -73,13 +75,13 @@
 
   <p>Additional features</p>
   <input type="checkbox" name="changingTableMen" value=" ✔️  Changing table in men's room">
-  <label for="tableMen">Men's changing table</label>
+  <label for="changingTableMen">Men's changing table</label>
   <input type="checkbox" name="changingTableWomen" value=" ✔️ Changing table in women's room">
-  <label for="tableWomen">Women's changing table</label>
+  <label for="changingTableWomen">Women's changing table</label>
   <input type="checkbox" name="feminineProducts" value=" ✔️  Feminine hygiene products">
-  <label for="products">Feminine products</label>
+  <label for="feminineProducts">Feminine products</label>
   <input type="checkbox" name="trashCan" value=" ✔️  Trash can">
-  <label for="trash">trash</label>
+  <label for="trashCan">trash</label>
 
   <p>Accessibility</p>
   <input type="checkbox" name="genderSensitivity" value="✔️  Nonbinary options available">
@@ -91,8 +93,8 @@
   <label for="comment">Add a comment!!!!</label>
   <input type="text" name="comment" id="comment" value={{comment}}>
 
-  <label>Upload a picture</label>
-  <input name="image" type="file" size="40" accept="image/jpeg">
+  {{!-- <label>Upload a picture</label>
+  <input name="image" type="file" size="40" accept="image/jpeg"> --}}
 
 
   {{!-- Nicht vergessen: comments --}}
