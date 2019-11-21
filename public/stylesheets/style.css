@@ -182,4 +182,16 @@ form button:hover {
   text-align: center;
   margin: 1rem; }
 
+.price {
+  text-align: center;
+  color: #1480AE;
+  margin-top: .2rem; }
+
+.details {
+  margin-left: 1rem;
+  color: #0E3F7A; }
+
+.bottom-menu {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */

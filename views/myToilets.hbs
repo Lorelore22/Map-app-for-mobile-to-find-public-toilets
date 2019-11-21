@@ -1,12 +1,12 @@
 {{#if toilets}}
-<h1>My added toilets</h1>
+<h1 class="log-heads">My added toilets</h1>
 {{else}}
 <p>No toilets to display!</p>
 {{/if}}
 
 {{#each toilets}}
-<div>
-  <a href="/toilets/{{_id}}">{{toiletType}} Toilet {{location}}</a>
+<div class="toilet-list">
+  <a  href="/toilets/{{_id}}">{{toiletType}} Toilet {{location}}</a>
 
 </div>
 

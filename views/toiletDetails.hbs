@@ -1,29 +1,29 @@
 {{#with toilet}}
-<h1>{{location}} {{toiletType}} toilet: </h1>
+<h1 class="log-heads">{{location}} {{toiletType}} toilet: </h1>
 
 <div>
   {{#if price}}
-  <h2>Price: {{price}} €</h2>
+  <h2 class="price">Price: {{price}} €</h2>
   {{else}}
-  <h2>Price: free</h2>
+  <h2 class="price">Price: free</h2>
   {{/if}}
 </div>
 
-<div>
+<div class="details">
   {{#if cleanliness}}
   <p>Cleanliness: {{cleanliness}}</p>
   {{/if}}
 </div>
 
 
-<div>
+<div class="details">
   {{#if experience}}
   <p>Experiences: {{experience}}</p>
   {{/if}}
 </div>
 
 
-<div>
+<div class="details">
   {{#if soap}}
   <p>{{soap}}</p>
   {{/if}}
@@ -33,28 +33,28 @@
 
 
 
-<div></div>
 <div>
+<div  class="details">
   {{#if handDryer}}
   <p>{{handDryer}}</p>
   {{/if}}
 </div>
-<div>
+<div  class="details">
   {{#if paperTowels}}
   </p>{{paperTowels}}</p>
   {{/if}}
 </div>
-<div>
+<div class="details">
   {{#if clothTowels}}
   <p> {{clothTowels}}</p>
   {{/if}}
 </div>
-<div>
+<div class="details">
   {{#if other}}
   <p> {{other}}</p>
   {{/if}}
 </div>
-<div>
+<div class="details">
   {{#if none}}
   <p> ❌ no drying options</p>
   {{/if}}
@@ -63,22 +63,22 @@
 
 
 <div>
-  <div>
+  <div class="details">
     {{#if changingTableMen}}
     <p> ✔️ Changing table in men's room</p>
     {{/if}}
   </div>
-  <div>
+  <div class="details">
     {{#if changingTableWomen}}
     <p>{{changingTableWomen}}</p>
     {{/if}}
   </div>
-  <div>
+  <div class="details">
     {{#if feminineProducts}}
     <p>{{feminineProducts}}</p>
     {{/if}}
   </div>
-  <div>
+  <div class="details">
     {{#if trashCan}}
     <p>{{trashCan}}</p>
     {{/if}}
@@ -88,18 +88,19 @@
 
 
 <div>
-  <div>
+  <div class="details">
     {{#if genderSensitivity}}
     <p>{{genderSensitivity}}</p>
     {{/if}}
   </div>
+  <div class="details">
   {{#if barrierFree}}
   <p>{{barrierFree}}</p>
   {{/if}}
 </div>
 
 
-<div>
+<div class="details">
   {{#if comment}}
   <p>Comment: {{comment}}</p>
   {{else}}
