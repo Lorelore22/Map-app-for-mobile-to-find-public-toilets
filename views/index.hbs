@@ -4,6 +4,7 @@
 
 
 <script>
+  let markerColor;
   mapboxgl.accessToken = 'pk.eyJ1IjoibG9yZWxvcmUyMiIsImEiOiJjazJ6eWFlOWIwZGdvM2xxajE1cWtwNW40In0.XRygCDceol4DCypWeqb0cg';
   var map = new mapboxgl.Map({
     container: 'map',
@@ -26,7 +27,7 @@
 
   let marker = new mapboxgl.Marker({
     draggable: true,
-    color: "green"
+    color: "blue"
     // set coordinates for marker, place on map:
   }).setLngLat([13.40, 52.52]).addTo(map);
 
@@ -77,9 +78,14 @@
              <a href="/toiletDetails/${toilet._id}">View more</a>
             `
           )
-
+        if (toilet.isFree === "Yes") {
+          markerColor = "green"
+        }
+        else {
+          markerColor = "red"
+        }
         console.log("markers data", toilet.coordinates)
-        new mapboxgl.Marker().setLngLat(toilet.coordinates).setPopup(popup).addTo(map)
+        new mapboxgl.Marker({ color: markerColor }).setLngLat(toilet.coordinates).setPopup(popup).addTo(map)
       })
     }).catch(err => {
       console.log(err)
