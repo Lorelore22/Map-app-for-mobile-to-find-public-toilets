@@ -21,7 +21,7 @@ const toiletSchema = new Schema({
   },
   soap: {
     type: String,
-    enum: ["Yes", "No"]
+
   },
 
 
