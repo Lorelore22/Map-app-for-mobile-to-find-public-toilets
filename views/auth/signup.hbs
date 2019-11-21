@@ -1,13 +1,13 @@
-<h2>Signup</h2>
+<h2 class="log-heads">Sign up</h2>
 
 <form action="/auth/signup" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
+  <label class="logs" for="username">Username</label>
+  <input id="username" class="log-forms" type="text" name="username" placeholder="Ironhacker">
 
   <br><br>
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
+  <label class="logs" for="password">Password</label>
+  <input id="password" class="log-forms" type="password" name="password" placeholder="Your password">
   <br>
   {{#if message }}
     <div class="error-message">{{ message }}</div>
@@ -15,10 +15,13 @@
 
   <br><br>
 
-  <button>Create account</button>
+  <button class="form-button log-forms">Create account</button>
 
+
+<div>
   <p class="account-message">
-    Do you already have an account?
-    <a href="/auth/login">Login</a>
+    Already have an account?
+    <a href="/auth/login"> Log in</a>
   </p>
+  </div>
 </form>

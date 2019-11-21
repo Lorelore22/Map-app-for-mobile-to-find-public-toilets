@@ -1,4 +1,5 @@
 // nav-background-color-blue: #0E3F7A
+// form-button color: #1480AE
 
 
 body {
@@ -129,7 +130,7 @@ nav a {
 }
 
 a {
-  color: #00B7FF;
+  color: #1480AE;
 }
 
 
@@ -160,4 +161,77 @@ a {
 
 .button-container {
   margin: 2%
+}
+// HERE I ADDED STUFF FROM MONTASAR
+
+a {
+  color: #1480AE;
+}
+
+// form {
+//   margin: 30px auto;
+//   width: 380px;
+// }
+
+.logs {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+// form input, form button 
+  .log-forms {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: rgb(240, 245, 245);
+  text-align: center;
+
+}
+
+.form-button {
+  background: #1480AE;
+  border: 1px solid #1480AE;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: 0.3s ease background;
+  width: 100%;
+}
+
+form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: 0.3s ease background;
+}
+
+.error-message {
+  background: #f02b63;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.account-message {
+  color: gray;
+  text-align: center;
+}
+
+.log-heads {
+  text-align: center;
+  margin: 1rem;
+
+
 }
