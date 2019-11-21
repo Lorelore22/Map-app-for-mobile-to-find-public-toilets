@@ -66,13 +66,13 @@ let toilets = [
 
     changingTableWomen: " ✔️ Changing table in women's room",
 
-    cleanliness: "5",
+    cleanliness: "⭐⭐⭐⭐⭐",
 
     clothTowels: null,
 
     comment: "Not bad, but the lines were insane",
 
-    experience: "0",
+    experience: "👎",
 
     feminineProducts: " ✔️  Feminine hygiene products",
 
@@ -112,13 +112,13 @@ let toilets = [
 
     changingTableWomen: null,
 
-    cleanliness: "0",
+    cleanliness: "💩",
 
     clothTowels: null,
 
     comment: "Not much privacy, but great view of the river!",
 
-    experience: "0",
+    experience: "👎",
 
     feminineProducts: null,
 
@@ -158,13 +158,13 @@ let toilets = [
 
     changingTableWomen: " ✔️ Changing table in women's room",
 
-    cleanliness: "0",
+    cleanliness: "💩",
 
     clothTowels: null,
 
     comment: "",
 
-    experience: "4",
+    experience: "⭐⭐⭐⭐",
 
     feminineProducts: " ✔️  Feminine hygiene products",
 
@@ -204,7 +204,7 @@ let toilets = [
 
     changingTableWomen: " ✔️ Changing table in women's room",
 
-    cleanliness: "5",
+    cleanliness: "⭐⭐⭐⭐⭐",
 
     clothTowels: null,
 
@@ -212,7 +212,7 @@ let toilets = [
 
       "A great place to anonymously slip away to the restroom, can also learn about German history before and after. ",
 
-    experience: "4",
+    experience: "⭐⭐⭐⭐",
 
     feminineProducts: null,
 
@@ -252,7 +252,7 @@ let toilets = [
 
     changingTableWomen: " ✔️ Changing table in women's room",
 
-    cleanliness: "5",
+    cleanliness: "⭐⭐⭐⭐⭐",
 
     clothTowels: null,
 
@@ -260,7 +260,7 @@ let toilets = [
 
       "Beware the staff who judges you for staying so long without ordering more while you wait for your friend in the bathroom",
 
-    experience: "0",
+    experience: "👎",
 
     feminineProducts: null,
 

@@ -14,12 +14,10 @@ const toiletSchema = new Schema({
     type: Number,
   },
   cleanliness: {
-    type: String,
-    enum: [0, 1, 2, 3, 4, 5]
+    type: String
   },
   experience: {
-    type: String,
-    enum: [0, 1, 2, 3, 4, 5]
+    type: String
   },
   soap: {
     type: String,
