@@ -52,7 +52,9 @@ const toiletSchema = new Schema({
   adder: {
     type: Schema.Types.ObjectId,
     ref: "User"
-  }
+  },
+
+  comment: String
   // comments: [
   //   {
   //   type: Schema.Types.ObjectId,

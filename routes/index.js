@@ -138,7 +138,7 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
     genderSensitivity,
     barrierFree,
 
-    comments,
+    comment,
 
     image
 
@@ -172,7 +172,7 @@ router.post("/updateToilet/:toiletId", loginCheck(), (req, res, next) => {
         genderSensitivity,
         barrierFree,
 
-        comments,
+        comment,
 
         image,
         adder: req.user._id

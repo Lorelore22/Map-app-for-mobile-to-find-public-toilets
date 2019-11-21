@@ -17,9 +17,9 @@
 
 
   <p>Free?</p>
-  <input type="radio" name="isFree" id="isFree" value={{isFree}} required="true">
+  <input type="radio" name="isFree" id="isFree" value="Yes" required="true">
   <label for="isFree">Yes</label>
-  <input type="radio" name="isFree" id="isFree" value={{isFree}}>
+  <input type="radio" name="isFree" id="isFree" value="No">
   <label for="isFree">No</label>
   {{!-- IF MACHEN --}}
 
@@ -85,6 +85,10 @@
   <label for="genderSensitivity">Nonbinary options available</label>
   <input type="checkbox" name="barrierFree" value="✔️ Wheelchair accessible">
   <label for='barrierFree'>Barrier-free</label>
+
+
+<label for="comment">Add a comment!!!!</label>
+  <input type="text" name="comment" id="comment" value={{comment}}>
 
   <label>Upload a picture</label>
   <input name="image" type="file" size="40" accept="image/jpeg">
