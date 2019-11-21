@@ -3,13 +3,13 @@
   <img id="img-logo" src="/images/logo.jpg" alt="toilet-app-logo">
 
 
-  <p id="instruction">Add toilet with blue pin</p>
+  <p id="instruction">Drag blue pin to</p>
 
   <form action="/addToilet" method="post">
     <input type="text" name="lng" id="lng" style="display: none">
     <input type="text" name="lat" id="lat" style="display: none">
 
-    <button type="submit" class="button">
+    <button type="submit" class="button button-add-toilet">
       Add 🚽
     </button>
 
@@ -92,9 +92,9 @@
         console.log("Hier!! " + toilet)
         let popup = new mapboxgl.Popup({ offset: 10 })
           .setHTML(
-            `<h1>Toilet: ${toilet.toiletType}</h1>
-            <h2>${toilet.location}</h2>
-             <a href="/toiletDetails/${toilet._id}">View more</a>
+            `<h4>Toilet: ${toilet.toiletType}</h4>
+            <h5>${toilet.location}</h5>
+             <a class="button" href="/toiletDetails/${toilet._id}">View more</a>
             `
           )
         if (toilet.isFree === "Yes") {
