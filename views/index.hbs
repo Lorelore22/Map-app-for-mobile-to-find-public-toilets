@@ -1,7 +1,20 @@
+<div class="header-container">
+  <div class="heading">
+    <img id="img-logo" src="/images/logo.jpg" alt="toilet-app-logo">
+  </div>
+  <p>add 🚽 with blue pin</p>
+  <form action="/addToilet" method="post">
+    <input type="text" name="lng" id="lng" style="display: none">
+    <input type="text" name="lat" id="lat" style="display: none">
+
+    <button type="submit" class="button">
+      Add 🚽
+    </button>
+
+  </form>
+</div>
+
 <div id='map'></div>
-
-
-
 
 <script>
   let markerColor;
@@ -131,14 +144,3 @@
 
 
 </script>
-
-
-<form action="/addToilet" method="post">
-  <input type="text" name="lng" id="lng" style="display: none">
-  <input type="text" name="lat" id="lat" style="display: none">
-
-  <button type="submit">
-    Add a toilet
-  </button>
-
-</form>
