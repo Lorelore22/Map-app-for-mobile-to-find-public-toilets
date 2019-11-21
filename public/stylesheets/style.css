@@ -98,6 +98,10 @@ nav a {
   border: solid 2px #0E3F7A;
   border-radius: 10%; }
 
+.popup-button {
+  font-size: 1rem;
+  padding: 0.2rem; }
+
 a {
   color: #00B7FF; }
 
