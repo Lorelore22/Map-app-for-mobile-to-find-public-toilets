@@ -99,7 +99,7 @@ router.post("/addToilet", loginCheck(), (req, res, next) => {
 
 })
 
-router.get("/toiletDetails/:toiletId", loginCheck(), (req, res, next) => {
+router.get("/toiletDetails/:toiletId", (req, res, next) => {
   Toilet.findById(req.params.toiletId)
     // .populate("adder")
     .then(toilet => {
